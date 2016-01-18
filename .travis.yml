@@ -1,0 +1,15 @@
+language: node_js
+before_script:
+- make build
+before_deploy:
+- make archive
+deploy:
+  provider: releases
+  api_key:
+    secure: Q0WS0nugjZvotvM8y/6SItrShZVyot8tddy0I0Lyp3aVXLprSq3NQHYghLath6WnHD4rDkagUVHd9j5eRGl5fWqcLKk4yUe9mIDpwDPRoambtVKRPI+7thcJzc4gRBHNGgNRzd7Qvouoyeo7cZ7GH738qn6DoixOsZFlNGOZMVNaN3APKDp8fa+9wswHR86dc8KofN2Baibf2oTll0hvZpB3eE0kBhZq2O5pYfUZqER0NwHDmxBYDZ21rxdPgtRJePZGIs9OW47Y4cPGAXI+Wv9Zkiy58rcbnqsnc1id+WEUQuXnqKLJn2GhyEPq2/rkPcCYutkQ0y4001oyFtrhwttvmi+9LwNxqktsCh25xHlXJ7cxSr4iH74yUMZuwRQ8WYqsH3Sx8Isg5fxMbc0aqDBg9+0wnHNMIZAwUZJDWanFumTrTwz53xnqy+5G4+Cfsrt479wzGaQ+tO1TX0ZYlzFzRbFK7clFlx4gOFD4TMvpb2efviKRJfr+nmzwOervraWjwG1urfohYV3KYnSasPr+1lR1o94DDnlJ91AO45MN3WEQfRxa+IbLkzo++sqP5ocuRd3znJuYxtnJ8lY1+asPUlYxABVfmNTWGCcpkkviQzpNsoq6iGPnQOqO06IspNTIt0kQcH0Fpe1Kg0ezdCb+lSLGyv2o37X01dlRoDM=
+  file: build/AWSECommerceServiceDynamicValue.zip
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+    repo: luckymarmot/Paw-AWSECommerceServiceDynamicValue
