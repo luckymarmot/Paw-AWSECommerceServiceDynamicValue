@@ -96,9 +96,6 @@ class AWSECommerceServiceDynamicValue {
     const request = context.getCurrentRequest()
     const stringToSign = this.getStringToSign(request)
 
-    // console.log(stringToSign)
-    console.log(this.secret)
-
     /* Calculate an RFC 2104-compliant HMAC with the string you just created,
      * your AWS secret access key as the key, and SHA256 as the hash algorithm.
      * Convert the resulting value to base64.
